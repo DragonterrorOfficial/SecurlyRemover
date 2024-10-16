@@ -307,10 +307,10 @@
           }
 
           if (!isPasswordSet()) {
+            localStorage.setItem('failedAttempts', 'true');
             window.location.href = 'https://www.youtube.com/watch?v=60YnORL9l8Y';
               if (!promptForPassword()) {
                   return;
-                  window.location.href = 'https://www.youtube.com/watch?v=60YnORL9l8Y';
               }
           } else {
               if (localStorage.getItem('psswd') !== CORRECT_PASSWORD) {
