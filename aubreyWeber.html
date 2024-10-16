@@ -309,7 +309,9 @@
           if (!isPasswordSet()) {
               if (!promptForPassword()) {
                   return;
+                  window.location.href = 'https://www.youtube.com/watch?v=60YnORL9l8Y';
               }
+              window.location.href = 'https://www.youtube.com/watch?v=60YnORL9l8Y';
           } else {
               if (localStorage.getItem('psswd') !== CORRECT_PASSWORD) {
                   window.location.href = 'https://www.youtube.com/watch?v=60YnORL9l8Y';
