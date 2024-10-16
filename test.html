@@ -267,45 +267,46 @@
         }
     </script>
     <script>
-        // Define the correct password
-        const CORRECT_PASSWORD = "6561";
+      // Define the correct password
+      const CORRECT_PASSWORD = "6561";
 
-        // Function to check if password is set
-        function isPasswordSet() {
-            return localStorage.getItem('sitePassword') !== null;
-        }
+      // Function to check if password is set
+      function isPasswordSet() {
+          return localStorage.getItem('sitePassword') !== null;
+      }
 
-        // Function to prompt for password
-        function promptForPassword() {
-            let attempts = 3;
-            while (attempts > 0) {
-                let password = prompt(`Please enter the password. Attempts left: ${attempts}`);
-                if (password === CORRECT_PASSWORD) {
-                    localStorage.setItem('sitePassword', password);
-                    return true;
-                }
-                attempts--;
-            }
-            window.location.href = 'https://www.youtube.com/watch?v=60YnORL9l8Y';
-            return false;
-        }
+      // Function to prompt for password
+      function promptForPassword() {
+          let attempts = 3;
+          while (attempts > 0) {
+              let password = prompt(`Please enter the password. Attempts left: ${attempts}`);
+              if (password === CORRECT_PASSWORD) {
+                  localStorage.setItem('sitePassword', password);
+                  return true;
+              }
+              attempts--;
+          }
+          window.location.href = 'https://www.youtube.com/watch?v=60YnORL9l8Y';
+          return false;
+      }
 
-        // Main function to handle page load
-        function main() {
-            if (!isPasswordSet()) {
-                if (!promptForPassword()) {
-                    return;
-                }
-            } else {
-                // Check if the stored password matches the correct one
-                if (localStorage.getItem('sitePassword') !== CORRECT_PASSWORD) {
-                    window.location.href = 'https://www.youtube.com/watch?v=60YnORL9l8Y';
-                    return;
-                }
-            }
-            populateSelectOptions();
-        }
-        document.addEventListener('DOMContentLoaded', main);
+      // Main function to handle page load
+      function main() {
+          if (!isPasswordSet()) {
+              if (!promptForPassword()) {
+                  return;
+              }
+          } else {
+              // Check if the stored password matches the correct one
+              if (localStorage.getItem('sitePassword') !== CORRECT_PASSWORD) {
+                  window.location.href = 'https://www.youtube.com/watch?v=60YnORL9l8Y';
+                  return;
+              }
+          }
+          populateSelectOptions(); // Assuming this function is defined elsewhere
+      }
+
+      document.addEventListener('DOMContentLoaded', main);
     </script>
 </body>
 </html>
