@@ -270,7 +270,7 @@
       const CORRECT_PASSWORD = "6561";
 
       function isPasswordSet() {
-          return localStorage.getItem('sitePassword') !== null;
+          return localStorage.getItem('psswd') !== null;
       }
 
       function hasFailedAttempts() {
@@ -282,7 +282,7 @@
           while (attempts > 0) {
               let password = prompt(`Please enter the password. Attempts left: ${attempts}`);
               if (password === CORRECT_PASSWORD) {
-                  localStorage.setItem('sitePassword', password);
+                  localStorage.setItem('psswd', password);
                   localStorage.removeItem('failedAttempts'); 
                   return true;
               }
@@ -304,7 +304,7 @@
                   return;
               }
           } else {
-              if (localStorage.getItem('sitePassword') !== CORRECT_PASSWORD) {
+              if (localStorage.getItem('psswd') !== CORRECT_PASSWORD) {
                   window.location.href = 'https://www.youtube.com/watch?v=60YnORL9l8Y';
                   return;
               }
